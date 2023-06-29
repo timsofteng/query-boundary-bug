@@ -7,12 +7,9 @@ import { ErrorBoundary } from "./ErrorBoundary.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    // mutations: {},
-
     queries: {
-      // useErrorBoundary: true,
+      useErrorBoundary: true,
       refetchOnWindowFocus: false,
-      // refetchOnReconnect: false,
       retry: 0,
     },
   },
