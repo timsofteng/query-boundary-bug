@@ -4,12 +4,17 @@ import {
   ErrorBoundary as ErrorBoundaryPackage,
   FallbackProps,
 } from "react-error-boundary";
+import { useNavigate } from "react-router-dom";
 
 const Fallback = (props: FallbackProps) => {
+  console.log("in boundary");
+  const navigate = useNavigate();
+
   return (
     <div>
       <div>Failed to load element</div>
       <button onClick={props.resetErrorBoundary}>Try Again</button>
+      <button onClick={() => navigate("/one")}>to page one</button>
     </div>
   );
 };

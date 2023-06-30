@@ -2,11 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { useNavigate } from "react-router-dom";
 import { useFetchTodo } from "./api";
 
-function App() {
+function PageTwo() {
   const [count, setCount] = useState(0);
 
+  const navigate = useNavigate();
   useFetchTodo();
 
   return (
@@ -19,7 +21,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Page 2</h1>
+      <button onClick={() => navigate("/one")}>to page one</button>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -35,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default PageTwo;
