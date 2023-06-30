@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@suspensive/react-query";
 
 const fetchTodo = () =>
   fetch("https://jsonplaceholder.typicode.com/tods/1").then((resp) => {
@@ -11,7 +11,7 @@ const fetchTodo = () =>
   });
 
 export const useFetchTodo = ({ ...options } = {}) => {
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: ["fetch-todo"],
     queryFn: fetchTodo,
     ...options,

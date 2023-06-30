@@ -25,11 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/one/two",
-    element: (
-      <ErrorBoundary>
-        <PageTwo />
-      </ErrorBoundary>
-    ),
+    element: <ErrorBoundary><PageTwo /></ErrorBoundary>,
   },
 ]);
 
